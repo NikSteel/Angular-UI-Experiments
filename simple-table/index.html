@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app>
+
+  <head>
+    <title>Simple app</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="controller.js"></script>
+    <link href="style.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <div ng-controller="SampleCtrl">
+      <table>
+        <thead>
+          <tr>
+            <th>Last</th>
+            <th>First</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="person in people">
+            <td>{{person.last}}</td>
+            <td>{{person.first}}</td>
+            <td></td>
+          </tr>
+          <tr>
+          <form ng-submit ng-controller="SampleCtrl" name="new-person">
+            <td><input ng-model="addLast" type="text" placeholder="Last"/></td>
+            <td><input ng-model="addFirst" type="text" placeholder="First"/></td>
+            <td><button type="submit" ng-click="addPerson()">Add</button></td>
+          </form>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+
+</html>
